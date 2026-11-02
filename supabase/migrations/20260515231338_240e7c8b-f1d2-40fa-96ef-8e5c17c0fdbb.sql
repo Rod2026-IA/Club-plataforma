@@ -1,0 +1,1 @@
+DROP TRIGGER IF EXISTS trg_messages_update_streak ON public.messages;

@@ -1,0 +1,455 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Montserrat Black';
+  src: url('/fonts/Montserrat-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins Black';
+  src: url('/fonts/Poppins-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins Black', 'Outfit', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+
+  /* Apply title font to common heading-like elements across the platform */
+  button,
+  .btn,
+  [role="button"],
+  [data-slot="badge"],
+  .badge,
+  [data-slot="card-title"],
+  [data-slot="dialog-title"],
+  [data-slot="alert-title"],
+  [data-slot="sheet-title"],
+  [data-slot="drawer-title"],
+  [data-slot="tabs-trigger"] {
+    font-family: 'Poppins Black', 'Outfit', sans-serif;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 230 15% 95%;
+    --foreground: 230 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 12%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 230 25% 5%;
+
+    --secondary: 270 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 15% 90%;
+    --muted-foreground: 230 10% 45%;
+
+    --accent: 160 100% 45%;
+    --accent-foreground: 230 25% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 15% 85%;
+    --input: 230 15% 85%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 230 25% 12%;
+    --sidebar-foreground: 230 15% 90%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 230 25% 5%;
+    --sidebar-accent: 270 80% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 230 20% 20%;
+    --sidebar-ring: 195 100% 50%;
+
+    /* Custom tokens */
+    --gold: 45 90% 55%;
+    --gold-foreground: 230 25% 5%;
+    --navy: 230 50% 20%;
+    --navy-light: 230 40% 30%;
+    --navy-dark: 230 60% 10%;
+    --success: 160 100% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Neon glow tokens */
+    --neon-cyan: 195 100% 50%;
+    --neon-purple: 270 80% 60%;
+    --neon-green: 160 100% 45%;
+    --neon-pink: 330 90% 60%;
+    --neon-orange: 25 95% 55%;
+
+    font-family: 'Gilroy', 'Outfit', sans-serif;
+  }
+
+  .dark {
+    --background: 230 25% 7%;
+    --foreground: 220 20% 90%;
+
+    --card: 230 25% 10%;
+    --card-foreground: 220 20% 90%;
+
+    --popover: 230 25% 10%;
+    --popover-foreground: 220 20% 90%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 230 25% 5%;
+
+    --secondary: 270 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 20% 15%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 160 100% 45%;
+    --accent-foreground: 230 25% 5%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 20% 16%;
+    --input: 230 20% 16%;
+    --ring: 195 100% 50%;
+
+    --sidebar-background: 230 30% 6%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 195 100% 50%;
+    --sidebar-primary-foreground: 230 25% 5%;
+    --sidebar-accent: 270 80% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 230 20% 14%;
+    --sidebar-ring: 195 100% 50%;
+
+    --gold: 45 90% 55%;
+    --gold-foreground: 230 25% 5%;
+    --navy: 230 50% 20%;
+    --navy-light: 230 40% 30%;
+    --navy-dark: 230 60% 10%;
+    --success: 160 100% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --neon-cyan: 195 100% 50%;
+    --neon-purple: 270 80% 60%;
+    --neon-green: 160 100% 45%;
+    --neon-pink: 330 90% 60%;
+    --neon-orange: 25 95% 55%;
+  }
+}
+
+/* ─── Aurora design tokens (parallel to shadcn tokens, do not replace them) ─── */
+:root {
+  /* Aurora light defaults */
+  --aurora-bg: #F4F0E8;
+  --aurora-bg-2: #ECE7DB;
+  --aurora-hero-ink: #15132C;
+  --aurora-surface: #FFFFFF;
+  --aurora-surface-2: #F7F3EB;
+  --aurora-surface-3: #EDE8DD;
+  --aurora-line: rgba(21,19,44,0.08);
+  --aurora-line-strong: rgba(21,19,44,0.16);
+  --aurora-text: #15132C;
+  --aurora-text-mute: #5E5B7A;
+  --aurora-text-dim: #9C99B5;
+
+  --aurora-violet: #6D5BD0;
+  --aurora-violet-deep: #4A38B0;
+  --aurora-lavender: #8B79E8;
+  --aurora-cyan: #0E9BAE;
+  --aurora-peach: #E8761C;
+  --aurora-mint: #10A56F;
+  --aurora-rose: #DB4D93;
+  --aurora-gold: #D89B12;
+  --aurora-red: #E0506A;
+
+  --aurora-shadow: 0 1px 2px rgba(20,22,42,0.05), 0 10px 28px rgba(20,22,42,0.07);
+  --aurora-on-accent: #FFFFFF;
+  --aurora-nav-bg: #15132C;
+}
+
+html.dark {
+  --aurora-bg: #0E0A20;
+  --aurora-bg-2: #120D29;
+  --aurora-hero-ink: #15102E;
+  --aurora-surface: #1A1438;
+  --aurora-surface-2: #221A47;
+  --aurora-surface-3: #2C2356;
+  --aurora-line: rgba(255,255,255,0.07);
+  --aurora-line-strong: rgba(255,255,255,0.15);
+  --aurora-text: #F3EFFF;
+  --aurora-text-mute: #A79FD0;
+  --aurora-text-dim: #6F6699;
+
+  --aurora-violet: #8B7BF0;
+  --aurora-violet-deep: #6D5BD0;
+  --aurora-lavender: #C4B5FD;
+  --aurora-cyan: #2DD4E8;
+  --aurora-peach: #FB923C;
+  --aurora-mint: #34D399;
+  --aurora-rose: #F472B6;
+  --aurora-gold: #FBBF24;
+  --aurora-red: #FB7185;
+
+  --aurora-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  --aurora-on-accent: #15102E;
+  --aurora-nav-bg: #15102E;
+}
+
+@keyframes aurora-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+@keyframes aurora-float {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(12px,-10px) scale(1.08); }
+}
+@keyframes aurora-screen-in { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: translateY(0); } }
+
+.aurora-blob { animation: aurora-float 9s ease-in-out infinite; }
+.aurora-live-dot { animation: aurora-pulse 1.8s ease-in-out infinite; }
+.aurora-screen-enter { animation: aurora-screen-in 320ms cubic-bezier(.22,.61,.36,1); }
+.aurora-tap { cursor: pointer; -webkit-tap-highlight-color: transparent; transition: transform 120ms ease, background 160ms ease, border-color 160ms ease; }
+.aurora-tap:active { transform: scale(0.975); }
+
+/* ============ Aurora Phase 2 utilities ============ */
+.aurora-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 420px at 10% -10%, color-mix(in oklab, var(--aurora-violet) 22%, transparent) 0%, transparent 60%),
+    radial-gradient(700px 380px at 110% 10%, color-mix(in oklab, var(--aurora-cyan) 18%, transparent) 0%, transparent 65%),
+    var(--aurora-bg);
+  color: var(--aurora-text);
+}
+.aurora-card {
+  background: var(--aurora-surface);
+  border: 1px solid var(--aurora-line);
+  border-radius: 18px;
+  box-shadow: var(--aurora-shadow);
+}
+.aurora-card-glass {
+  background: color-mix(in oklab, var(--aurora-surface) 78%, transparent);
+  border: 1px solid var(--aurora-line-strong);
+  border-radius: 18px;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: var(--aurora-shadow);
+}
+.aurora-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px;
+  background: color-mix(in oklab, var(--aurora-violet) 14%, transparent);
+  color: var(--aurora-violet);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: .02em;
+  border: 1px solid color-mix(in oklab, var(--aurora-violet) 24%, transparent);
+}
+.aurora-display { font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -0.01em; }
+.aurora-grotesk { font-family: 'Space Grotesk', sans-serif; }
+.aurora-mono { font-family: 'JetBrains Mono', monospace; }
+
+.aurora-auth-bg {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  background:
+    radial-gradient(70% 50% at 15% 10%, color-mix(in oklab, var(--aurora-violet) 50%, transparent) 0%, transparent 60%),
+    radial-gradient(60% 50% at 95% 90%, color-mix(in oklab, var(--aurora-cyan) 38%, transparent) 0%, transparent 60%),
+    linear-gradient(180deg, var(--aurora-hero-ink) 0%, #0a0820 100%);
+  color: #fff;
+}
+.aurora-auth-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 22px;
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.55);
+}
+
+.font-serif-display { font-family: 'Instrument Serif', serif; }
+.font-grotesk { font-family: 'Space Grotesk', sans-serif; }
+.font-mono-tag { font-family: 'JetBrains Mono', monospace; }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    /* Evita que iOS/Android reescalen el texto al rotar y mantiene 16px como base */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Escala fluida: 16px en móvil, hasta ~17.5px en desktop */
+    font-size: clamp(16px, 0.95rem + 0.15vw, 17.5px);
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins Black', 'Outfit', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+
+  p, span, label, input, textarea, select {
+    font-family: 'Gilroy', 'Inter', sans-serif;
+    font-size: 1rem;
+  }
+
+  /* Inputs en iOS: 16px mínimo evita auto-zoom al enfocar */
+  @media (max-width: 640px) {
+    input,
+    textarea,
+    select {
+      font-size: 16px;
+    }
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-family: 'Gilroy', 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-navy {
+    background: linear-gradient(135deg, hsl(230 30% 8%), hsl(230 25% 14%));
+  }
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(45 90% 55%), hsl(35 95% 50%));
+  }
+  .glass-card {
+    background: color-mix(in oklab, var(--aurora-surface) 88%, transparent);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid var(--aurora-line);
+    box-shadow: var(--aurora-shadow);
+    transition: border-color 160ms ease, box-shadow 200ms ease, transform 160ms ease;
+  }
+  .glass-card:hover {
+    border-color: var(--aurora-line-strong);
+    box-shadow: 0 6px 18px rgba(20,22,42,0.08), 0 18px 40px rgba(20,22,42,0.10);
+  }
+  .neon-glow-cyan {
+    box-shadow: 0 0 15px hsl(195 100% 50% / 0.3), 0 0 45px hsl(195 100% 50% / 0.1);
+  }
+  .neon-glow-purple {
+    box-shadow: 0 0 15px hsl(270 80% 60% / 0.3), 0 0 45px hsl(270 80% 60% / 0.1);
+  }
+  .neon-glow-green {
+    box-shadow: 0 0 15px hsl(160 100% 45% / 0.3), 0 0 45px hsl(160 100% 45% / 0.1);
+  }
+  .neon-glow-pink {
+    box-shadow: 0 0 15px hsl(330 90% 60% / 0.3), 0 0 45px hsl(330 90% 60% / 0.1);
+  }
+  .neon-glow-orange {
+    box-shadow: 0 0 15px hsl(25 95% 55% / 0.3), 0 0 45px hsl(25 95% 55% / 0.1);
+  }
+
+  /* Neon outline glow for large dashboard cards (light + dark) */
+  .neon-card-cyan {
+    border-color: hsl(195 100% 50% / 0.5);
+    box-shadow: 0 0 0 1px hsl(195 100% 50% / 0.3), 0 0 20px hsl(195 100% 50% / 0.35), 0 0 50px hsl(195 100% 50% / 0.15);
+  }
+  .neon-card-purple {
+    border-color: hsl(270 80% 60% / 0.5);
+    box-shadow: 0 0 0 1px hsl(270 80% 60% / 0.3), 0 0 20px hsl(270 80% 60% / 0.35), 0 0 50px hsl(270 80% 60% / 0.15);
+  }
+  .neon-card-green {
+    border-color: hsl(160 100% 45% / 0.5);
+    box-shadow: 0 0 0 1px hsl(160 100% 45% / 0.3), 0 0 20px hsl(160 100% 45% / 0.35), 0 0 50px hsl(160 100% 45% / 0.15);
+  }
+  .neon-card-pink {
+    border-color: hsl(330 90% 60% / 0.5);
+    box-shadow: 0 0 0 1px hsl(330 90% 60% / 0.3), 0 0 20px hsl(330 90% 60% / 0.35), 0 0 50px hsl(330 90% 60% / 0.15);
+  }
+  .neon-card-orange {
+    border-color: hsl(25 95% 55% / 0.5);
+    box-shadow: 0 0 0 1px hsl(25 95% 55% / 0.3), 0 0 20px hsl(25 95% 55% / 0.35), 0 0 50px hsl(25 95% 55% / 0.15);
+  }
+  .neon-text-cyan {
+    color: hsl(195 100% 50%);
+    text-shadow: 0 0 10px hsl(195 100% 50% / 0.5);
+  }
+  .neon-text-purple {
+    color: hsl(270 80% 60%);
+    text-shadow: 0 0 10px hsl(270 80% 60% / 0.5);
+  }
+  .neon-text-green {
+    color: hsl(160 100% 45%);
+    text-shadow: 0 0 10px hsl(160 100% 45% / 0.5);
+  }
+  .gradient-neon {
+    background: linear-gradient(135deg, hsl(195 100% 50%), hsl(270 80% 60%));
+  }
+  .gradient-neon-green {
+    background: linear-gradient(135deg, hsl(160 100% 45%), hsl(195 100% 50%));
+  }
+  /* Calendar (Año Bíblico) - inspired by reference design */
+  .gradient-calendar-header {
+    background: linear-gradient(135deg, hsl(265 75% 65%), hsl(270 80% 60%));
+  }
+  .calendar-day-tile {
+    background: hsl(0 0% 100%);
+    box-shadow:
+      0 1px 2px hsl(230 30% 50% / 0.08),
+      0 4px 12px hsl(230 30% 50% / 0.06),
+      inset 0 1px 0 hsl(0 0% 100%);
+  }
+  .dark .calendar-day-tile {
+    background: hsl(230 25% 14%);
+    box-shadow:
+      0 1px 2px hsl(0 0% 0% / 0.4),
+      0 4px 12px hsl(0 0% 0% / 0.25),
+      inset 0 1px 0 hsl(230 20% 22%);
+  }
+  .calendar-day-selected {
+    background: linear-gradient(135deg, hsl(265 75% 65%), hsl(270 80% 60%)) !important;
+    color: hsl(0 0% 100%) !important;
+    box-shadow:
+      0 4px 14px hsl(270 80% 60% / 0.45),
+      0 2px 6px hsl(270 80% 60% / 0.35) !important;
+  }
+  .calendar-day-completed {
+    background: hsl(265 75% 96%) !important;
+    color: hsl(265 75% 55%) !important;
+  }
+  .dark .calendar-day-completed {
+    background: hsl(265 40% 22%) !important;
+    color: hsl(265 90% 80%) !important;
+  }
+  .calendar-day-sunday { color: hsl(15 90% 60%); }
+  .calendar-day-saturday { color: hsl(265 75% 60%); }
+  .calendar-day-outside { color: hsl(230 10% 75%); }
+  .dark .calendar-day-outside { color: hsl(230 10% 35%); }
+}

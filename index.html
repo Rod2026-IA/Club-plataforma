@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Apply saved theme before render to avoid flash and ensure consistency across all pages.
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t !== "light") document.documentElement.classList.add("dark");
+        } catch (e) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>GuíaGo - Plataforma de Control de Actividades</title>
+    <meta name="description" content="Plataforma de Control de Actividades">
+    <meta name="author" content="Lovable" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0a0a1a" />
+    <link rel="icon" type="image/png" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="GuíaGo" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- TODO: Update og:title to match your application name -->
+    
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bb65a476-a212-427d-9656-1b248e6a09f2/id-preview-6ba31f44--ad7b0527-d8d3-455e-9d3f-b6be899295aa.lovable.app-1776645459513.png">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bb65a476-a212-427d-9656-1b248e6a09f2/id-preview-6ba31f44--ad7b0527-d8d3-455e-9d3f-b6be899295aa.lovable.app-1776645459513.png">
+    <meta property="og:title" content="GuíaGo - Plataforma de Control de Actividades">
+  <meta name="twitter:title" content="GuíaGo - Plataforma de Control de Actividades">
+  <meta property="og:description" content="Plataforma de Control de Actividades">
+  <meta name="twitter:description" content="Plataforma de Control de Actividades">
+</head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

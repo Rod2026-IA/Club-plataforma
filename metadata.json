@@ -1,0 +1,8 @@
+{
+  "name": "GuíaGo",
+  "description": "Plataforma de Control de Actividades",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

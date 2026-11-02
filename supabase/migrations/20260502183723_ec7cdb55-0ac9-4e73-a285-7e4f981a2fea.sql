@@ -1,0 +1,1 @@
+ALTER TABLE public.platform_branding ADD COLUMN IF NOT EXISTS welcome_enabled boolean NOT NULL DEFAULT true;

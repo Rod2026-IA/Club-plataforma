@@ -1,0 +1,9 @@
+project_id = "omnidxuaqzipzfqjxcdn"
+[functions.recover-pin]
+verify_jwt = false
+
+[functions.webauthn-login-options]
+verify_jwt = false
+
+[functions.webauthn-login-verify]
+verify_jwt = false
